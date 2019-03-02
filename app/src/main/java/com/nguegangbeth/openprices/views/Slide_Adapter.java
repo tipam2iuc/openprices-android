@@ -24,6 +24,9 @@ public class Slide_Adapter extends PagerAdapter {
         this.context = context;
     }
 
+    /**
+     * Liste de mes differentes images
+     */
     //Array
     public int[] slide_image = {
             R.drawable.logos,
@@ -31,12 +34,18 @@ public class Slide_Adapter extends PagerAdapter {
             R.drawable.logos
     };
 
+    /**
+     * Liste de mes differentes entetes
+     */
     public String[] slide_heading = {
         "GREETING",
         "OPTION",
         "INFORMATION"
     };
 
+    /**
+     * Liste de mes description par page,
+     */
     public String[] slide_desc = {
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n" +
                     "\t\ttempor incididunt ut labore et dolore magna aliqua",
@@ -44,6 +53,11 @@ public class Slide_Adapter extends PagerAdapter {
             "Quelques informations de l'application importantes..."
     };
 
+    /**
+     * Recupere taille de mes elements,
+     * le nombre d'entete que je vais disposer
+     * @return
+     */
     @Override
     public int getCount() {
         return slide_heading.length;
@@ -54,6 +68,12 @@ public class Slide_Adapter extends PagerAdapter {
         return view == (ConstraintLayout) o;
     }
 
+    /**
+     * Attribution des images, entetes, description en fonction de du numero de page
+     * @param container
+     * @param position
+     * @return
+     */
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
@@ -71,6 +91,12 @@ public class Slide_Adapter extends PagerAdapter {
         return view;
     }
 
+    /**
+     * Destruction de mes buttons creer apres chaue slide
+     * @param container
+     * @param position
+     * @param object
+     */
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         container.removeView((ConstraintLayout)object);

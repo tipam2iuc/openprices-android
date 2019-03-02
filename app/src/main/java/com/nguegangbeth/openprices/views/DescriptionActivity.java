@@ -61,6 +61,9 @@ public class DescriptionActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Initialisation de mes ...
+     */
     private void Init(){
         /*button_continue = (Button)findViewById(R.id.button_continue);
         textView_welcome = (TextView)findViewById(R.id.textView_welcome);*/
@@ -70,6 +73,11 @@ public class DescriptionActivity extends AppCompatActivity {
         button_suivant = (Button)findViewById(R.id.button_suivant);
     }
 
+    /**
+     * Recupere la position de la page actuelle pour pouvoir connaitre la couleur a affecter dans les trois petits bouton
+     * de slide
+     * @param position
+     */
     public void AddDotsIndicator(int position){
 
         Dots = new TextView[3];
@@ -88,6 +96,9 @@ public class DescriptionActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Defini le texte qui sera affiche sur mes boutons en fonction du numero de page
+     */
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int i, float v, int i1) {

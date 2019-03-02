@@ -28,17 +28,35 @@ public class ChoixConnexionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choix_connexion);
         Init();
+        button_inscription.setEnabled(false);
+        button_google.setEnabled(false);
+        button_linkedin.setEnabled(false);
+        button_facebook.setEnabled(false);
+        button_connexion.setEnabled(false);
         textView_passer.setEnabled(false);
 
+        /**
+         * Valide les boutons du formulaire que lorsaque l'utilisateur accepte les termes du contrat
+         */
         checkBox_terme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked == true){
                     textView_passer.setTextColor(getResources().getColor(R.color.violetFonce));
                     textView_passer.setEnabled(true);
+                    button_inscription.setEnabled(true);
+                    button_google.setEnabled(true);
+                    button_linkedin.setEnabled(true);
+                    button_facebook.setEnabled(true);
+                    button_connexion.setEnabled(true);
                 }else{
                     textView_passer.setTextColor(getResources().getColor(R.color.darkGray));
                     textView_passer.setEnabled(false);
+                    button_inscription.setEnabled(false);
+                    button_google.setEnabled(false);
+                    button_linkedin.setEnabled(false);
+                    button_facebook.setEnabled(false);
+                    button_connexion.setEnabled(false);
                 }
 
             }
@@ -48,6 +66,9 @@ public class ChoixConnexionActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Jointure des boutons a mes membres
+     */
     private void Init(){
         button_connexion = (Button)findViewById(R.id.button_connexion);
         button_facebook = (Button)findViewById(R.id.button_facebook);
@@ -59,6 +80,10 @@ public class ChoixConnexionActivity extends AppCompatActivity {
         textView_termes = (TextView) findViewById(R.id.textView_termes);
     }
 
+    /**
+     * text permettant de passer l'inscription ou la connexion
+     * utiliser par ceux qui ne veulent pas etre connecte
+     */
     private void EcouteTextViewPasser(){
         ((TextView)findViewById(R.id.textView_passer)).setOnClickListener(new ImageButton.OnClickListener(){
             public void onClick(View v){
