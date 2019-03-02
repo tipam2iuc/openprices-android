@@ -206,17 +206,17 @@
                 android:layout_gravity="bottom|center|right"
                 android:layout_weight="6"
                 android:gravity="bottom|right|center_horizontal|center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingRight="16dp">
 
                 <TextView
                     android:id="@+id/textView_passer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|right"
-                    android:layout_marginRight="16dp"
+                    android:layout_width="73dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:fontFamily="@font/comic_sans_ms"
-                    android:gravity="right"
-                    android:text="Passer"
+                    android:gravity="center"
+                    android:text="PASSER"
                     android:textColor="@color/violetFonce"
                     android:textStyle="bold|italic" />
 
