@@ -217,7 +217,7 @@
                     android:fontFamily="@font/comic_sans_ms"
                     android:gravity="center"
                     android:text="PASSER"
-                    android:textColor="@color/violetFonce"
+                    android:textColor="@android:color/darker_gray"
                     android:textStyle="bold|italic" />
 
             </LinearLayout>

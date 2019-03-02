@@ -44,7 +44,7 @@ public class DescriptionActivity extends AppCompatActivity {
         button_suivant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if((CurrentPage) == 2){
+                if((CurrentPage +1 ) == 3){
                     Intent intent = new Intent(DescriptionActivity.this, ChoixConnexionActivity.class);
                     startActivity(intent);
                 }else{
