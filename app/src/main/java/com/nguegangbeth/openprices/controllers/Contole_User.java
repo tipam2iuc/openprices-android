@@ -3,6 +3,7 @@ package com.nguegangbeth.openprices.controllers;
 import android.content.Context;
 
 import com.nguegangbeth.openprices.modeles.User;
+import com.nguegangbeth.openprices.modeles.accesLocal_User;
 import com.nguegangbeth.openprices.tools.Serializer;
 
 import java.util.ArrayList;
@@ -13,7 +14,8 @@ public class Contole_User {
 
     private static Contole_User instance = null;
     private static User user;
-    private static String  Monfic = "Save profil";
+    private static accesLocal_User accesLocal;
+    private static String  Monfic = "Save User";
     private ArrayList<User> lesUsers = new ArrayList<User>();
 
     /**
@@ -31,7 +33,8 @@ public class Contole_User {
     public static final Contole_User getInstance(Context context){
         if(Contole_User.instance == null){
             Contole_User.instance = new Contole_User();
-            RecupSerialiaze(context);
+            accesLocal = new accesLocal_User(context);
+            user = accesLocal.recupDernier();
         }
         return Contole_User.instance;
     }
@@ -55,7 +58,7 @@ public class Contole_User {
         user = new User(new Date(),email, nom_prenom, motPasse, motPasse);
         Serializer.Serialize(Monfic, user, contexte);
         lesUsers.add(user);
-
+        accesLocal.Ajout(user);
     }
 
     /**
@@ -64,16 +67,29 @@ public class Contole_User {
      */
     public String getEmail()
     {
-        return user.getEMAIL();
+        if(user == null){
+            return null;
+        }else{
+            return lesUsers.get(lesUsers.size()+1).getEMAIL();
+        }
     }
 
     public String getNomPrenom(){
-        return user.getNomPrenom();
+        if(user == null){
+            return null;
+        }else {
+            return lesUsers.get(lesUsers.size() + 1).getNomPrenom();
+        }
     }
 
     public String getMotPasse(){
-        return user.getMotPasse();
+        if(user == null){
+            return null;
+        }else {
+            return lesUsers.get(lesUsers.size() + 1).getMotPasse();
+        }
     }
+XA
 
 
     private static void RecupSerialiaze(Context contexte){
