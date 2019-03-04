@@ -14,41 +14,53 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="1"
-            android:gravity="center_horizontal|center_vertical"
+            android:layout_weight="7"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView2"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/comic_sans_ms"
-                android:gravity="center"
-                android:text="Qu'est ce que tu attends pour coder??"
-                android:textColor="@color/violetFonce"
-                android:textSize="30sp" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageView"
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="4dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logos" />
+
+                <EditText
+                    android:id="@+id/editText_rechercher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rect_recherch"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Name" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="185dp"
-                app:srcCompat="@drawable/puzzle" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"></LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="1"
-            android:gravity="center_horizontal|center_vertical"
-            android:orientation="vertical">
+            android:layout_weight="2"
+            android:orientation="vertical"></LinearLayout>
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="228dp"
-                app:srcCompat="@drawable/question" />
-        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="8"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

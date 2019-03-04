@@ -7,9 +7,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class SQLiteUser extends SQLiteOpenHelper {
 
     private String Creation= "Create table User ("
-            + "dateEnregistrement DATE PRIMARY KEY,"
-            +"adresse_mail TEXT NOT NULL,"
-            +"motdepasse NOT NULL" +
+            +"adresse_mail TEXT NOT NULL PRIMARY KEY,"
+            +"nom_Prenom TEXT NOT NULL ,"
+            +"motdepasse NOT NULL,"
+            +"DateEnregistrement TEXT NOT NULL"+
             ")";
     /**
      * Constructeur

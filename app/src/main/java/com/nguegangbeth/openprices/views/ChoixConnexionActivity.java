@@ -36,6 +36,7 @@ public class ChoixConnexionActivity extends AppCompatActivity {
         textView_passer.setEnabled(false);
 
         EcouteButtonInscription();
+        EcouteButtonConnexion();
         /**
          * Valide les boutons du formulaire que lorsaque l'utilisateur accepte les termes du contrat
          */
@@ -98,6 +99,15 @@ public class ChoixConnexionActivity extends AppCompatActivity {
         button_inscription.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(ChoixConnexionActivity.this, QuestionActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void EcouteButtonConnexion(){
+        button_connexion.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(ChoixConnexionActivity.this, Interface_connexion_Activity.class);
                 startActivity(intent);
             }
         });

@@ -3,6 +3,7 @@ package com.nguegangbeth.openprices.modeles;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
+import java.util.Date;
 import java.util.Objects;
 
 public class User {
@@ -10,6 +11,7 @@ public class User {
     private String Email;
     private String MotPasse;
     private String ConfirmMotDePasse;
+    private Date dateNow;
 
     /**
      * Constructeur
@@ -18,11 +20,13 @@ public class User {
      * @param motPasse
      * @param confirmMotDePasse
      */
-    public User(String nomPrenom, String EMAIL, String motPasse, String confirmMotDePasse) {
-        NomPrenom = nomPrenom;
+    public User(Date dateNow, String EMAIL, String nomPrenom, String motPasse, String confirmMotDePasse) {
+        this.NomPrenom = nomPrenom;
         this.Email = EMAIL;
-        MotPasse = motPasse;
-        ConfirmMotDePasse = confirmMotDePasse;
+        this.MotPasse = motPasse;
+        this.ConfirmMotDePasse = confirmMotDePasse;
+        this.dateNow = dateNow;
+
     }
 
     public String getNomPrenom() {
@@ -39,6 +43,10 @@ public class User {
 
     public String getConfirmMotDePasse() {
         return ConfirmMotDePasse;
+    }
+
+    public Date getDateNow() {
+        return dateNow;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
