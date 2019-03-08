@@ -6,17 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".views.Interface_connexion_Activity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/background_light"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="109dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="322dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="1"
+            android:layout_weight="10"
             android:background="@color/head"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="vertical">
@@ -32,78 +35,112 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="@color/head"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:background="@drawable/rect_user_creer_compte"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="vertical"
-                android:padding="20dp">
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical">
 
-                <TextView
-                    android:id="@+id/textView"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="20dp"
-                    android:fontFamily="@font/comic_sans_ms"
-                    android:gravity="center"
-                    android:text="Connexion"
-                    android:textColor="@color/violetFonce"
-                    android:textSize="30sp" />
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical"
+                    android:paddingTop="50dp">
 
-                <EditText
-                    android:id="@+id/editText_email_connect"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:drawableLeft="@drawable/mail"
-                    android:ems="10"
-                    android:fontFamily="@font/comic_sans_ms"
-                    android:inputType="textEmailAddress"
-                    android:scrollbarSize="@android:dimen/app_icon_size"
-                    android:text="Adresse mail"
-                    android:textColor="@color/head"
-                    android:textSize="12sp" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:background="@drawable/rect_user_creer_compte"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
 
-                <EditText
-                    android:id="@+id/editText_motpasse_connect"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:drawableLeft="@drawable/secure"
-                    android:drawableRight="@drawable/hide"
-                    android:ems="10"
-                    android:fontFamily="@font/comic_sans_ms"
-                    android:inputType="textPassword"
-                    android:scrollbarSize="@android:dimen/app_icon_size"
-                    android:text="Confirmer mot de passe"
-                    android:textColor="@color/head"
-                    android:textSize="12sp" />
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:fontFamily="@font/comic_sans_ms"
+                            android:gravity="center"
+                            android:text="Connexion"
+                            android:textColor="@color/violetFonce"
+                            android:textSize="30sp" />
 
-                <TextView
-                    android:id="@+id/textView_invalid_identifiant"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/holo_red_dark"
-                    android:textSize="10sp" />
+                        <EditText
+                            android:id="@+id/editText_email_connect"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/mail"
+                            android:ems="10"
+                            android:fontFamily="@font/comic_sans_ms"
+                            android:hint="email@gmail.com"
+                            android:inputType="textEmailAddress"
+                            android:scrollbarSize="@android:dimen/app_icon_size"
+                            android:textColor="@color/violetFonce"
+                            android:textColorHint="@color/head"
+                            android:textSize="12sp" />
 
-                <Button
-                    android:id="@+id/button_connexion_connect"
-                    android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/rect_creer_user"
-                    android:fontFamily="@font/comic_sans_ms"
-                    android:text="Connexion"
-                    android:textColor="@android:color/background_light" />
+                        <EditText
+                            android:id="@+id/editText_motpasse_connect"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/secure"
+                            android:drawableRight="@drawable/hide"
+                            android:ems="10"
+                            android:fontFamily="@font/comic_sans_ms"
+                            android:hint="email"
+                            android:inputType="textPassword"
+                            android:scrollbarSize="@android:dimen/app_icon_size"
+                            android:textColor="@color/violetFonce"
+                            android:textColorHint="@color/head"
+                            android:textSize="12sp" />
 
-            </LinearLayout>
+                        <TextView
+                            android:id="@+id/textView_invalid_identifiant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/holo_red_dark"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/comic_sans_ms"/>
+
+                        <Button
+                            android:id="@+id/button_connexion_connect"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/rect_creer_user"
+                            android:fontFamily="@font/comic_sans_ms"
+                            android:text="Connexion"
+                            android:textColor="@android:color/background_light" />
+
+                        <TextView
+                            android:id="@+id/textView_forgot_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="Mot de passe oublie?"
+                            android:textColor="@color/violetFonce"
+                            android:textSize="10sp"
+                            android:textStyle="italic" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

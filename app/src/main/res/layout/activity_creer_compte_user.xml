@@ -60,6 +60,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/violetFonce"
                         android:drawableLeft="@drawable/user"
                         android:ems="10"
                         android:fontFamily="@font/comic_sans_ms"
@@ -83,13 +84,15 @@
                         android:scrollbarSize="@android:dimen/app_icon_size"
                         android:textColor="@color/violetFonce"
                         android:textColorHint="@color/head"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:backgroundTint="@color/violetFonce"/>
 
                     <EditText
                         android:id="@+id/editText_motPasse_user"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/violetFonce"
                         android:drawableLeft="@drawable/secure"
                         android:drawableRight="@drawable/hide"
                         android:ems="10"
@@ -115,7 +118,16 @@
                         android:scrollbarSize="@android:dimen/app_icon_size"
                         android:textColor="@color/violetFonce"
                         android:textColorHint="@color/head"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:backgroundTint="@color/violetFonce"/>
+
+                    <TextView
+                        android:id="@+id/textView_error_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/comic_sans_ms"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="10sp" />
 
                     <Button
                         android:id="@+id/button_creer_user"
@@ -125,7 +137,8 @@
                         android:background="@drawable/rect_creer_user"
                         android:fontFamily="@font/comic_sans_ms"
                         android:text="Créer"
-                        android:textColor="@android:color/background_light" />
+                        android:textColor="@android:color/background_light"
+                        />
 
                 </LinearLayout>
 
