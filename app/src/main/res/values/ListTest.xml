@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="phones_codes">
+        <item>Cameroun|+237|cm</item>
+        <item>France|+67|fr</item>
+        <item>Allemagne|+4|de</item>
+        <item>Italie|+3|cm</item>
+        <item>Irak|+2|cm</item>
+        <item>Canada|+147|ca</item>
+        <item>Gabon|+21|cm</item>
+        <item>Congo|+23|cm</item>
+        <item>Yémen|+234|cm</item>
+        <item>Russie|+236|cm</item>
+        <item>Madagascar|+232|cm</item>
+        <item>Argantine|+231|cm</item>
+        <item>Espagne|+217|es</item>
+        <item>Soudan|+037|cm</item>
+        <item>Benin|+287|cm</item>
+        <item>Tchad|+247|cm</item>
+        <item>Chine|+235|cm</item>
+    </string-array>
+</resources>

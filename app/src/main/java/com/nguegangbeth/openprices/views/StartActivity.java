@@ -39,4 +39,28 @@ public class StartActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onDestroy() {
+        System.out.println("StartActivity::onDestroy");
+        super.onDestroy();
+    }
+
+    @Override
+    public void onStop() {
+        System.out.println("StartActivity::onStop");
+        super.onStop();
+    }
+
+    @Override
+    public void onResume() {
+        System.out.println("StartActivity::onResume");
+        super.onResume();
+    }
+
+    @Override
+    public void onRestart() {
+        System.out.println("StartActivity::onRestart");
+        super.onRestart();
+    }
+
 }

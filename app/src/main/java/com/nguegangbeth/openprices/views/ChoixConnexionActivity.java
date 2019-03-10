@@ -107,7 +107,7 @@ public class ChoixConnexionActivity extends AppCompatActivity {
     private void EcouteButtonConnexion(){
         button_connexion.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent(ChoixConnexionActivity.this, Interface_connexion_Activity.class);
+                Intent intent = new Intent(ChoixConnexionActivity.this, Interface_connexionActivity.class);
                 startActivity(intent);
             }
         });

@@ -13,12 +13,12 @@ import com.nguegangbeth.openprices.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Favoris_frag.OnFragmentInteractionListener} interface
+ * {@link MesProduits_frag.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Favoris_frag#newInstance} factory method to
+ * Use the {@link MesProduits_frag#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Favoris_frag extends Fragment {
+public class MesProduits_frag extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +30,7 @@ public class Favoris_frag extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Favoris_frag() {
+    public MesProduits_frag() {
         // Required empty public constructor
     }
 
@@ -40,11 +40,11 @@ public class Favoris_frag extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Favoris_frag.
+     * @return A new instance of fragment MesProduits_frag.
      */
     // TODO: Rename and change types and number of parameters
-    public static Favoris_frag newInstance(String param1, String param2) {
-        Favoris_frag fragment = new Favoris_frag();
+    public static MesProduits_frag newInstance(String param1, String param2) {
+        MesProduits_frag fragment = new MesProduits_frag();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,30 +62,10 @@ public class Favoris_frag extends Fragment {
     }
 
     @Override
-    public void onDestroy() {
-        System.out.println("Favoris_Frag::onDestroy");
-        super.onDestroy();
-    }
-
-    @Override
-    public void onStop() {
-        System.out.println("Favoris_Frag::onStop");
-        super.onStop();
-    }
-
-    @Override
-    public void onResume() {
-        System.out.println("Favoris_Frag::onResume");
-        super.onResume();
-    }
-
-
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favoris_frag, container, false);
+        return inflater.inflate(R.layout.fragment_mes_produits_frag, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -126,6 +106,4 @@ public class Favoris_frag extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
-
-
 }

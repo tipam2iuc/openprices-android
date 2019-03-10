@@ -27,6 +27,7 @@ public class DescriptionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("DescriptionActivity::onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
         Init();
@@ -140,5 +141,27 @@ public class DescriptionActivity extends AppCompatActivity {
         }
     };
 
+    @Override
+    public void onDestroy() {
+        System.out.println("DescriptionActivity::onDestroy");
+        super.onDestroy();
+    }
 
+    @Override
+    public void onStop() {
+        System.out.println("DescriptionActivity::onStop");
+        super.onStop();
+    }
+
+    @Override
+    public void onResume() {
+        System.out.println("DescriptionActivity::onResume");
+        super.onResume();
+    }
+
+    @Override
+    public void onRestart() {
+        System.out.println("DescriptionActivity::onRestart");
+        super.onRestart();
+    }
 }

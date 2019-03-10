@@ -7,5 +7,7 @@
     <color name="violetFonce">#410861</color>
     <color name="head">#CFC0D7</color>
     <color name="white">#FFFFFF</color>
-    <color name="darkGray">#aaa</color>
+    <color name="darkGray">#AAAAAA</color>
+    <color name="tabColor">#D7D4D8</color>
+
 </resources>

@@ -67,7 +67,7 @@ public class Creer_compte_userActivity extends AppCompatActivity {
                     }*/
                     //else{
                         contole_user.CreerUser(email, nomPrenom, motPasse, Creer_compte_userActivity.this);
-                        Intent intent = new Intent(Creer_compte_userActivity.this, Interface_connexion_Activity.class);
+                        Intent intent = new Intent(Creer_compte_userActivity.this, Interface_connexionActivity.class);
                         startActivity(intent);
                     //}
 
@@ -75,5 +75,29 @@ public class Creer_compte_userActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onDestroy() {
+        System.out.println("CreerCompteActivity::onDestroy");
+        super.onDestroy();
+    }
+
+    @Override
+    public void onStop() {
+        System.out.println("CreerCompteActivity::onStop");
+        super.onStop();
+    }
+
+    @Override
+    public void onResume() {
+        System.out.println("CreerCompteActivity::onResume");
+        super.onResume();
+    }
+
+    @Override
+    public void onRestart() {
+        System.out.println("CreerCompteActivity::onRestart");
+        super.onRestart();
     }
 }

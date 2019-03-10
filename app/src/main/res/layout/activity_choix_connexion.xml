@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="322dp"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="1"
+            android:layout_weight="6"
             android:background="@color/head"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="vertical">
@@ -30,97 +30,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="1"
-            android:gravity="center_horizontal|center_vertical"
+            android:layout_weight="2"
             android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="vertical">
+                android:background="@android:color/background_light"
+                android:fillViewport="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="340dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginTop="20dp"
                     android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
                     android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/button_facebook"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:background="@drawable/rect_facebook"
-                        android:drawableLeft="@drawable/facebook"
-                        android:text="SE CONNECTER AVEC FACEBOOK"
-                        android:textColor="@android:color/background_light" />
-
-                    <Button
-                        android:id="@+id/button_linkedin"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:background="@drawable/rect_linkedin"
-                        android:drawableLeft="@drawable/linkedin"
-                        android:text="SE CONNECTER AVEC LINKEDIN"
-                        android:textColor="@android:color/background_light" />
-
-                    <Button
-                        android:id="@+id/button_google"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:background="@drawable/rect_google"
-                        android:drawableLeft="@drawable/google"
-                        android:text="SE CONNECTER AVEC GOOGLE"
-                        android:textColor="@android:color/darker_gray" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="201dp"
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/imageView6"
-                            app:srcCompat="@drawable/small_line"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1" />
-
-                        <TextView
-                            android:id="@+id/textView4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/comic_sans_ms"
-                            android:gravity="bottom|center"
-                            android:text="Ou se connecter avec votre compte" />
-
-                        <ImageView
-                            android:id="@+id/imageView7"
-                            app:srcCompat="@drawable/small_line"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1" />
-                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -128,99 +54,200 @@
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_weight="1"
                         android:gravity="center_horizontal|center_vertical"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <Button
-                            android:id="@+id/button_inscription"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/incription_box"
-                            android:fontFamily="@font/comic_sans_ms"
-                            android:text="Incription"
-                            android:textColor="@color/violetFonce" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="8"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp">
 
-                        <Button
-                            android:id="@+id/button_connexion"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="16dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/incription_box"
-                            android:fontFamily="@font/comic_sans_ms"
-                            android:text="Connexion"
-                            android:textColor="@color/violetFonce" />
+                            <TextView
+                                android:id="@+id/textView_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Connecter et beneficiez..." />
+
+                            <Button
+                                android:id="@+id/button_facebook"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:background="@drawable/rect_facebook"
+                                android:drawableLeft="@drawable/facebook"
+                                android:text="SE CONNECTER AVEC FACEBOOK"
+                                android:textColor="@android:color/background_light" />
+
+                            <Button
+                                android:id="@+id/button_linkedin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:background="@drawable/rect_linkedin"
+                                android:drawableLeft="@drawable/linkedin"
+                                android:text="SE CONNECTER AVEC LINKEDIN"
+                                android:textColor="@android:color/background_light" />
+
+                            <Button
+                                android:id="@+id/button_google"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:background="@drawable/rect_google"
+                                android:drawableLeft="@drawable/google"
+                                android:text="SE CONNECTER AVEC GOOGLE"
+                                android:textColor="@android:color/darker_gray" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="10"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="10"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imageView6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/small_line" />
+
+                                <TextView
+                                    android:id="@+id/textView4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/comic_sans_ms"
+                                    android:gravity="bottom|center"
+                                    android:text="Ou se connecter avec votre compte" />
+
+                                <ImageView
+                                    android:id="@+id/imageView7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/small_line" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="10"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/button_inscription"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/incription_box"
+                                    android:fontFamily="@font/comic_sans_ms"
+                                    android:text="Incription"
+                                    android:textColor="@color/violetFonce" />
+
+                                <Button
+                                    android:id="@+id/button_connexion"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/incription_box"
+                                    android:fontFamily="@font/comic_sans_ms"
+                                    android:text="Connexion"
+                                    android:textColor="@color/violetFonce" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="10"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp">
+
+                                <CheckBox
+                                    android:id="@+id/checkBox_terme"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/comic_sans_ms"
+                                    android:text="J'accepte les "
+                                    android:textColor="@android:color/darker_gray"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/textView_termes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/comic_sans_ms"
+                                    android:text="termes et conditions"
+                                    android:textColor="@color/violetFonce"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/textView6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="50"
+                                    android:fontFamily="@font/comic_sans_ms"
+                                    android:paddingLeft="1dp"
+                                    android:text="d'OpenPrices"
+                                    android:textColor="@android:color/darker_gray"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="196dp"
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:orientation="horizontal">
-
-                        <CheckBox
-                            android:id="@+id/checkBox_terme"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/comic_sans_ms"
-                            android:text="J'accepte les "
-                            android:textColor="@android:color/darker_gray"
-                            android:textSize="12sp" />
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom|center|right"
+                        android:layout_weight="8"
+                        android:gravity="bottom|right|center_horizontal|center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="16dp">
 
                         <TextView
-                            android:id="@+id/textView_termes"
-                            android:layout_width="89dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:id="@+id/textView_passer"
+                            android:layout_width="73dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
                             android:fontFamily="@font/comic_sans_ms"
-                            android:text="termes et conditions"
-                            android:textColor="@color/violetFonce"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/comic_sans_ms"
-                            android:paddingLeft="1dp"
-                            android:text="d'OpenPrices"
+                            android:gravity="center"
+                            android:text="PASSER"
                             android:textColor="@android:color/darker_gray"
-                            android:textSize="12sp" />
+                            android:textStyle="bold|italic" />
 
                     </LinearLayout>
+
                 </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="bottom|center|right"
-                android:layout_weight="6"
-                android:gravity="bottom|right|center_horizontal|center_vertical"
-                android:orientation="horizontal"
-                android:paddingRight="16dp">
-
-                <TextView
-                    android:id="@+id/textView_passer"
-                    android:layout_width="73dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/comic_sans_ms"
-                    android:gravity="center"
-                    android:text="PASSER"
-                    android:textColor="@android:color/darker_gray"
-                    android:textStyle="bold|italic" />
-
-            </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
         </LinearLayout>
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
