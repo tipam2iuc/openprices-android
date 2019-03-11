@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Welcome to\n OpenPrices"
+                android:text="Welcome to OpenPrices"
                 android:textColor="@color/violetFonce"
                 android:textSize="36sp"
                 android:textStyle="bold" />
