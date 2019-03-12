@@ -1,61 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.DescriptionActivity">
+    tools:context=".views.DescriptionActivity"
+    android:background="@android:color/background_light">
 
-    <LinearLayout
+
+    <ImageView
+        android:id="@+id/imageView_slide"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/logos" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="1"
-            android:gravity="center_horizontal|center_vertical"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView_slide_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView_slide"
+        android:fontFamily="@font/comic_sans_ms"
+        android:gravity="center"
+        android:text="HEADING"
+        android:textColor="@color/violetFonce"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:paddingTop="20dp"/>
 
-            <ImageView
-                android:id="@+id/imageView_slide"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/logos" />
 
-            <TextView
-                android:id="@+id/textView_slide_heading"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="HEADING"
-                android:textColor="@color/violetFonce"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/comic_sans_ms"/>
-        </LinearLayout>
+    <TextView
+        android:id="@+id/textView_slide_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_slide_heading"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="@font/comic_sans_ms"
+        android:gravity="center"
+        android:text="Text" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="375dp"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="1"
-            android:gravity="center_horizontal|top|center_vertical"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView_slide_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:fontFamily="@font/comic_sans_ms"
-                android:gravity="center"
-                android:text="Lorem ipsu; dedneikd dndwindisdisxishixhsics" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

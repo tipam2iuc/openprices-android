@@ -33,6 +33,7 @@ public class Contole_User {
     public static final Contole_User getInstance(Context context){
         if(Contole_User.instance == null){
             Contole_User.instance = new Contole_User();
+            //RecupSerialiaze(context);
             accesLocal = new accesLocal_User(context);
             user = accesLocal.recupDernier();
         }
@@ -56,7 +57,7 @@ public class Contole_User {
     //creer un profil
     public void CreerUser(String email, String nom_prenom, String motPasse, Context contexte){
         user = new User(new Date(),email, nom_prenom, motPasse, motPasse);
-        Serializer.Serialize(Monfic, user, contexte);
+        //Serializer.Serialize(Monfic, user, contexte);
         lesUsers.add(user);
         accesLocal.Ajout(user);
     }

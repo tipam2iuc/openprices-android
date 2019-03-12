@@ -14,52 +14,40 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="7"
-            android:orientation="vertical">
+            android:layout_weight="15"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="4dp"
+                android:layout_height="54dp"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                app:srcCompat="@drawable/logos" />
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="4dp"
-                    android:layout_height="54dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/logos" />
-
-                <EditText
-                    android:id="@+id/editText_rechercher"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/rect_recherch"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <EditText
+                android:id="@+id/editText_rechercher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="horizontal"></LinearLayout>
+                android:background="@drawable/rect_recherch"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name" />
+
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight=" 3"
             android:orientation="vertical"></LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="8"
+            android:layout_weight="15"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="horizontal" />
     </LinearLayout>

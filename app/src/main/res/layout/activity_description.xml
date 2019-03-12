@@ -1,92 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
-    tools:context=".views.ChoixConnexionActivity">
+    tools:context=".views.ChoixConnexionActivity"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    >
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager_slide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/dots_layout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+         />
+
+    <Button
+        android:id="@+id/button_retour"
+        android:layout_width="180dp"
+        android:layout_height="39dp"
+        android:layout_alignRight="@id/dots_layout"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginRight="46dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/comic_sans_ms"
+        android:text="Retour"
+        android:gravity="left|center_horizontal|center_vertical"
+        android:visibility="invisible"
+        android:textColor="@color/violetFonce"
+        android:layout_alignParentBottom="true"
+
+        />
+
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/dots_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:padding="20dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewPager_slide"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+    <Button
+        android:id="@+id/button_suivant"
+        android:layout_width="179dp"
+        android:layout_height="45dp"
+        android:layout_alignLeft="@id/dots_layout"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="47dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/comic_sans_ms"
+        android:text="Suivant"
+        android:textColor="@color/violetFonce"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical|center_horizontal|right"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="5"
-            android:gravity="center_horizontal|top|center_vertical"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="16dp"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/button_retour"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/background_light"
-                    android:fontFamily="@font/comic_sans_ms"
-                    android:text="Retour"
-                    android:textColor="@color/violetFonce"
-                    android:visibility="invisible" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/dots_layout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp"></LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginRight="16dp"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/button_suivant"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/background_light"
-                    android:text="Suivant"
-                    android:textColor="@color/violetFonce"
-                    android:fontFamily="@font/comic_sans_ms"/>
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

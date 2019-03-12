@@ -29,17 +29,17 @@ public class Slide_Adapter extends PagerAdapter {
      */
     //Array
     public int[] slide_image = {
-            R.drawable.logos,
-            R.drawable.logos,
-            R.drawable.logos
+            R.drawable.market,
+            R.drawable.promo,
+            R.drawable.pain
     };
 
     /**
      * Liste de mes differentes entetes
      */
     public String[] slide_heading = {
-        "GREETING",
-        "OPTION",
+        "NOS PRODUITS",
+        "PROMOTIONS",
         "INFORMATION"
     };
 
@@ -65,7 +65,7 @@ public class Slide_Adapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object o) {
-        return view == (ConstraintLayout) o;
+        return view == (RelativeLayout) o;
     }
 
     /**
@@ -99,6 +99,6 @@ public class Slide_Adapter extends PagerAdapter {
      */
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView((ConstraintLayout)object);
+        container.removeView((RelativeLayout)object);
     }
 }

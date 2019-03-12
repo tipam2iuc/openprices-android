@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.DescriptionActivity"
+    android:background="@android:color/background_light">
+
+
+            <ImageView
+                android:id="@+id/imageView_slide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/logos"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/textView_slide_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/imageView_slide"
+        android:layout_toRightOf="@+id/imageView_slide"
+        android:fontFamily="@font/comic_sans_ms"
+        android:gravity="center"
+        android:text="HEADING"
+        android:textColor="@color/violetFonce"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+
+            <TextView
+                android:id="@+id/textView_slide_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comic_sans_ms"
+                android:gravity="center"
+                android:text="Text"
+                android:layout_below="@id/textView_slide_heading"
+                android:layout_toEndOf="@+id/imageView_slide"
+                android:layout_toRightOf="@+id/imageView_slide"/>
+
+
+</RelativeLayout>
