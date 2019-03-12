@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".views.MarketFragment"
+    tools:context=".views.UserConnectFragment"
     android:background="@android:color/background_light"
     android:orientation="vertical">
 
@@ -23,20 +23,11 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="35dp">
             <SearchView
                 android:id="@+id/searchview_fragUser"
-                android:layout_width="346dp"
-                android:layout_height="31dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginRight="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_toStartOf="@+id/imageButton_usermenu"
                 android:layout_toLeftOf="@+id/imageButton_usermenu"
                 android:background="@drawable/rect_recherch"
@@ -49,7 +40,12 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/background_light"
                 app:srcCompat="@drawable/user_icon"
-                android:layout_alignParentRight="true"/>
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"/>
+
+
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
@@ -63,15 +59,15 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:theme="@style/Theme"
-        app:tabTextAppearance="@style/tabsize"
         app:tabIndicatorColor="@color/violetFonce"
         app:tabSelectedTextColor="@color/violetFonce"
+        app:tabTextAppearance="@style/tabsize"
         app:tabTextColor="@color/darkGray">
 
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tous les produis" />
+            android:text="Tous les produits" />
 
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
@@ -83,6 +79,7 @@
             android:layout_height="wrap_content"
             android:text="Favoris" />
 
+
     </android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager
@@ -93,8 +90,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="5dp"
         android:layout_weight="1"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp" />
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        />
 
 </RelativeLayout>
