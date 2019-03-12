@@ -40,8 +40,8 @@ public class Interface_connexionActivity extends AppCompatActivity {
         button_connexion.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Interface_connexionActivity.this, User_connectActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(Interface_connexionActivity.this, User_connectActivity.class);
+                //startActivity(intent);
             }
         });
     }
