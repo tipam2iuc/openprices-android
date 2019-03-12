@@ -21,15 +21,11 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        Init();
+        button_continue = (Button)findViewById(R.id.button_continue);
+        textView_welcome = (TextView)findViewById(R.id.textView_welcome);
         EcoutButtonContinue();
     }
 
-    private void Init(){
-        button_continue = (Button)findViewById(R.id.button_continue);
-        textView_welcome = (TextView)findViewById(R.id.textView_welcome);
-
-    }
      private void EcoutButtonContinue(){
         ((Button)findViewById(R.id.button_continue)).setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
