@@ -1,12 +1,15 @@
 package com.nguegangbeth.openprices.views;
 
+import android.net.Uri;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.nguegangbeth.openprices.R;
 
-public class User_no_connectActivity extends AppCompatActivity {
+public class User_no_connectActivity extends AppCompatActivity implements TousProduit_frag.OnFragmentInteractionListener{
 
+    private ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,5 +38,10 @@ public class User_no_connectActivity extends AppCompatActivity {
     public void onRestart() {
         System.out.println("User_no_connectActivity::onRestart");
         super.onRestart();
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

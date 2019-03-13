@@ -1,54 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.User_no_connectActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.User_no_connectActivity"
+    android:background="@android:color/background_light"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_noConn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:paddingLeft="16dp"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@color/colorAccent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+            <SearchView
+                android:id="@+id/searchview_fragNocon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/imageButton_noconmenu"
+                android:layout_toLeftOf="@id/imageButton_noconmenu"
+                android:background="@drawable/rect_recherch"
+                android:contentDescription="Rechercher..." />
+
+
+            <ImageButton
+                android:id="@+id/imageButton_noconmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                app:srcCompat="@drawable/user_icon"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"/>
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_noConn"
+        android:padding="5dp">
+        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="15"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="4dp"
-                android:layout_height="54dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/logos" />
+        </android.support.v7.widget.RecyclerView>
 
-            <EditText
-                android:id="@+id/editText_rechercher"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/rect_recherch"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight=" 3"
-            android:orientation="vertical"></LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="15"
-            android:gravity="center_horizontal|center_vertical"
-            android:orientation="horizontal" />
     </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>

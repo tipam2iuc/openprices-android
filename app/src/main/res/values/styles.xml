@@ -3,13 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/violetFonce</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="Theme">
-        <item name="android:color">@color/violetFonce</item>
-    </style>
+
     <style name="tabsize">
         <item name="android:textSize">12dp</item>
     </style>

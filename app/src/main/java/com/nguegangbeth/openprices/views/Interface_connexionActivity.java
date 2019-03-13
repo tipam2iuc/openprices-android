@@ -1,6 +1,7 @@
 package com.nguegangbeth.openprices.views;
 
 import android.content.Intent;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,8 +41,8 @@ public class Interface_connexionActivity extends AppCompatActivity {
         button_connexion.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(Interface_connexionActivity.this, User_connectActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(Interface_connexionActivity.this, BottomNavigatorActivity.class);
+                startActivity(intent);
             }
         });
     }
