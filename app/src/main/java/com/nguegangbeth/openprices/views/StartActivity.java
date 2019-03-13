@@ -1,6 +1,7 @@
 package com.nguegangbeth.openprices.views;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,12 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SavePreferences();
+
+        if(StartActShow()){
+            startActivity(new Intent(StartActivity.this, BottomNavigatorActivity.class));
+            finish();
+        }
         setContentView(R.layout.activity_start);
         button_continue = (Button)findViewById(R.id.button_continue);
         textView_welcome = (TextView)findViewById(R.id.textView_welcome);
@@ -31,8 +38,23 @@ public class StartActivity extends AppCompatActivity {
             public void onClick(View v){
                 Intent intent = new Intent(StartActivity.this, DescriptionActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
+    }
+
+    private boolean StartActShow(){
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        return sharedPreferences.getBoolean("AlreadyOpenIntro", false);
+    }
+
+    private void SavePreferences(){
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        preferences.getBoolean("AlreadyOpenIntro", true);
+        editor.apply();
+        editor.commit();
     }
 
     @Override
@@ -57,6 +79,8 @@ public class StartActivity extends AppCompatActivity {
     public void onRestart() {
         System.out.println("StartActivity::onRestart");
         super.onRestart();
+        Intent intent = new Intent(StartActivity.this, BottomNavigatorActivity.class);
+        startActivity(intent);
     }
 
 }

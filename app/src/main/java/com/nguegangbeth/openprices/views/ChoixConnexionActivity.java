@@ -69,6 +69,7 @@ public class ChoixConnexionActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser() != null ){
                     startActivity(new Intent(ChoixConnexionActivity.this, BottomNavigatorActivity.class));
+                    finish();
                 }
             }
         };

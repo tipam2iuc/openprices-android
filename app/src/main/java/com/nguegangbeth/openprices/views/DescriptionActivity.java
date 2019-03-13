@@ -48,6 +48,7 @@ public class DescriptionActivity extends AppCompatActivity {
                 if((CurrentPage +1 ) == 3){
                     Intent intent = new Intent(DescriptionActivity.this, ChoixConnexionActivity.class);
                     startActivity(intent);
+                    finish();
                 }else{
                     viewPager_slide.setCurrentItem(CurrentPage + 1);
                 }

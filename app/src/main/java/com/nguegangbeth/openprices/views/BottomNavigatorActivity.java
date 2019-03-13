@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.nguegangbeth.openprices.R;
 
@@ -30,21 +31,23 @@ public class BottomNavigatorActivity extends AppCompatActivity implements MesPro
         setContentView(R.layout.activity_bottom_navigator);
 
         Init();
+        setFragment(userConnectFragment);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                setFragment(userConnectFragment);
+
                 switch (menuItem.getItemId()) {
                     case R.id.nav_accueil:
+                        Toast.makeText(BottomNavigatorActivity.this,"Home clicked",Toast.LENGTH_SHORT).show();
                         setFragment(userConnectFragment);
-                        return true;
                     case R.id.nav_espacetravail:
                         setFragment(marketFragment);
-                        return true;
                     default:
-                        return false;
+
                 }
+
+                return true;
             }
         });
 
