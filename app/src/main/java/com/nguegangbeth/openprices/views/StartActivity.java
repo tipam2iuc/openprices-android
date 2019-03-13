@@ -1,6 +1,7 @@
 package com.nguegangbeth.openprices.views;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,19 +21,39 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(StartActShow()){
+            startActivity(new Intent(StartActivity.this, BottomNavigatorActivity.class));
+        }
         setContentView(R.layout.activity_start);
         button_continue = (Button)findViewById(R.id.button_continue);
         textView_welcome = (TextView)findViewById(R.id.textView_welcome);
         EcoutButtonContinue();
     }
 
+
      private void EcoutButtonContinue(){
         ((Button)findViewById(R.id.button_continue)).setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(StartActivity.this, DescriptionActivity.class);
                 startActivity(intent);
+                SavePreferences();
+                finish();
             }
         });
+    }
+
+    private boolean StartActShow(){
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        return sharedPreferences.getBoolean("AlreadyOpenIntro", false);
+    }
+
+    private void SavePreferences(){
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("AlreadyOpenIntro", true);
+        editor.apply();
+        editor.commit();
     }
 
     @Override

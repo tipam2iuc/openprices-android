@@ -1,5 +1,7 @@
 package com.nguegangbeth.openprices.views;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -31,10 +33,12 @@ public class BottomNavigatorActivity extends AppCompatActivity implements MesPro
 
         Init();
 
+        setFragment(userConnectFragment);
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                setFragment(userConnectFragment);
+               // setFragment(userConnectFragment);
                 switch (menuItem.getItemId()) {
                     case R.id.nav_accueil:
                         setFragment(userConnectFragment);
@@ -57,6 +61,8 @@ public class BottomNavigatorActivity extends AppCompatActivity implements MesPro
         marketFragment = new MarketFragment();
         userConnectFragment = new UserConnectFragment();
     }
+
+
 
     private void setFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

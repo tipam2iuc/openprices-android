@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/market3"
     >
 
 
@@ -15,12 +16,11 @@
                 android:layout_alignParentTop="true"
                 android:background="@android:color/background_light"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"/>
+                android:layout_alignParentRight="true" />
 
             <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/background_light"
                 android:fillViewport="true"
                 android:layout_below="@id/imageView_project_name"
                 android:layout_alignParentLeft="true"
@@ -28,10 +28,12 @@
                 android:layout_alignParentBottom="true"
                 android:paddingRight="16dp"
                 android:paddingLeft="16dp"
-                android:paddingTop="10dp">
+                android:paddingTop="30dp"
+                android:background="@color/tranparentwhite">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    >
 
 
                             <TextView
@@ -41,40 +43,32 @@
                                 android:text="Connecter et beneficiez..."
                                 android:layout_alignParentTop="true"
                                 android:layout_alignParentLeft="true"
-                                android:layout_alignParentRight="true"/>
+                                android:layout_alignParentRight="true"
+                                android:layout_marginBottom="20dp"
+                                android:textColor="@color/violetFonce"/>
 
                             <Button
                                 android:id="@+id/button_facebook"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
+                                android:layout_marginTop="80dp"
                                 android:background="@drawable/rect_facebook"
                                 android:drawableLeft="@drawable/facebook"
                                 android:text="SE CONNECTER AVEC FACEBOOK"
                                 android:textColor="@android:color/background_light"
                                 android:layout_below="@id/textView_desc"/>
 
-                            <Button
-                                android:id="@+id/button_linkedin"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:background="@drawable/rect_linkedin"
-                                android:drawableLeft="@drawable/linkedin"
-                                android:text="SE CONNECTER AVEC LINKEDIN"
-                                android:textColor="@android:color/background_light"
-                                android:layout_below="@id/button_facebook"/>
-
-                            <Button
+                    <Button
                                 android:id="@+id/button_google"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
+                                android:layout_marginTop="10dp"
                                 android:background="@drawable/rect_google"
                                 android:drawableLeft="@drawable/google"
                                 android:text="SE CONNECTER AVEC GOOGLE"
                                 android:textColor="@android:color/darker_gray"
-                                android:layout_below="@id/button_linkedin"/>
+                                android:layout_below="@id/button_facebook"
+                                android:paddingLeft="5dp"/>
 
 
                                 <ImageView
@@ -135,61 +129,21 @@
                                     />
 
 
-                                <CheckBox
-                                    android:id="@+id/checkBox_terme"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/comic_sans_ms"
-                                    android:text="J'accepte les "
-                                    android:textColor="@android:color/darker_gray"
-                                    android:textSize="12sp"
-                                    android:layout_below="@id/button_connexion"
-                                    />
-
                     <TextView
-                        android:id="@+id/textView_termes"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/button_inscription"
-                        android:layout_alignLeft="@id/checkBox_terme"
-                        android:layout_marginLeft="115dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/comic_sans_ms"
-                        android:text="termes et conditions"
-                        android:textColor="@color/violetFonce"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-
-                    <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="121dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/button_inscription"
-                        android:layout_alignLeft="@id/textView_termes"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="131dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginRight="11dp"
-                        android:layout_weight="50"
-                        android:fontFamily="@font/comic_sans_ms"
-                        android:paddingLeft="1dp"
-                        android:text="d'OpenPrices"
-                        android:textColor="@android:color/darker_gray"
-                        android:textSize="12sp" />
-
-
-                        <TextView
                             android:id="@+id/textView_passer"
-                            android:layout_width="73dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/comic_sans_ms"
                             android:gravity="center"
                             android:text="PASSER"
-                            android:textColor="@android:color/darker_gray"
-                            android:textStyle="bold|italic" />
+                            android:textColor="@color/violetFonce"
+                            android:textStyle="bold|italic"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="20dp"
+                        android:textSize="15dp"
+                        />
                 </RelativeLayout>
 
             </android.support.v4.widget.NestedScrollView>
