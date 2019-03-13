@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.BottomNavigatorActivity">
-        </activity>
+        <activity android:name=".views.ListProduitParDefautActivity"></activity>
+        <activity android:name=".views.Ajouter_ProduitActivity" />
+        <activity android:name=".views.Ajouter_GestionnaireActivity" />
+        <activity android:name=".views.Ajouter_AdresseActivity" />
+        <activity android:name=".views.BottomNavigatorActivity" />
         <activity android:name=".views.CreerCompteMarketActivity" />
         <activity android:name=".views.Interface_connexionActivity" />
         <activity android:name=".views.QuestionActivity" />

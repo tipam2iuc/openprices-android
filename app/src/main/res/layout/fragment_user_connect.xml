@@ -58,7 +58,6 @@
         android:minHeight="?attr/actionBarSize"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:theme="@style/Theme"
         app:tabIndicatorColor="@color/violetFonce"
         app:tabSelectedTextColor="@color/violetFonce"
         app:tabTextAppearance="@style/tabsize"
@@ -82,16 +81,61 @@
 
     </android.support.design.widget.TabLayout>
 
+    <TextView
+        android:id="@+id/textview_filtrer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tabLayoutUser"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="11dp"
+        android:text="Filtrer : " />
+
+    <EditText
+        android:id="@+id/editext_filtrer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tabLayoutUser"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_toEndOf="@+id/textview_filtrer"
+        android:layout_toRightOf="@+id/textview_filtrer"
+        android:hint="Moins de..."
+        android:inputType="number"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/textview_trier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tabLayoutUser"
+        android:layout_alignEnd="@id/spinner_frag_user_conn"
+        android:layout_alignRight="@id/spinner_frag_user_conn"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginRight="73dp"
+        android:text="Trier par: " />
+    <Spinner
+        android:id="@+id/spinner_frag_user_conn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tabLayoutUser"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        >
+
+    </Spinner>
+
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPagerPagerUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tabLayoutUser"
+        android:layout_below="@id/editext_filtrer"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="5dp"
-        android:layout_weight="1"
         android:paddingLeft="6dp"
         android:paddingRight="6dp"
         />
