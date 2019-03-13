@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "106427883127",
+    "firebase_url": "https://openprices-android.firebaseio.com",
+    "project_id": "openprices-android",
+    "storage_bucket": "openprices-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106427883127:android:ea17c77c1e86419e",
+        "android_client_info": {
+          "package_name": "com.nguegangbeth.openprices"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106427883127-ou399ttrj1j3vpdftulvn75lp0lfqiu6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nguegangbeth.openprices",
+            "certificate_hash": "f57bc3cc99008e389fdf8e98633e85c8f05a7797"
+          }
+        },
+        {
+          "client_id": "106427883127-70pcigt3i729ae5sl5odnftfqfne2oq6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJoaktIgo-b-UukmyvLYaHDh-zs537Uso"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106427883127-70pcigt3i729ae5sl5odnftfqfne2oq6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
