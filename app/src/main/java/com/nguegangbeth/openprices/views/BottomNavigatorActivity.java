@@ -34,6 +34,7 @@ public class BottomNavigatorActivity extends AppCompatActivity implements MesPro
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                setFragment(userConnectFragment);
                 switch (menuItem.getItemId()) {
                     case R.id.nav_accueil:
                         setFragment(userConnectFragment);

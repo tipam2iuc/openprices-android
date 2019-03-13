@@ -2,4 +2,7 @@
     <string name="app_name">OpenPrices</string>
     <string name="Accueil">Accueil</string>
     <string name="EspaceTravail">Espace de travail</string>
+    <string name="facebook_app_id">412620152643448</string>
+    <string name="fb_login_protocol_scheme">fb412620152643448</string>
+
 </resources>
