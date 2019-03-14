@@ -23,7 +23,7 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         if(StartActShow()){
-            startActivity(new Intent(StartActivity.this, BottomNavigatorActivity.class));
+            startActivity(new Intent(StartActivity.this, DescriptionActivity.class));
         }
         setContentView(R.layout.activity_start);
         button_continue = (Button)findViewById(R.id.button_continue);

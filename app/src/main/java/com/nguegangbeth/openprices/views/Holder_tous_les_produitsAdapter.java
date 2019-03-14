@@ -36,8 +36,8 @@ public class Holder_tous_les_produitsAdapter extends RecyclerView.Adapter<Holder
 
         viewHolder.textView_nomproduit.setText(produit.getNomProduit());
         viewHolder.textView_desc.setText(produit.getDescription());
-        viewHolder.imageView_like.setImageResource(produit.getPhoto());
-        viewHolder.imageView_like.setImageResource(produit.getPhoto());
+        viewHolder.imageView_like.setImageResource(R.drawable.coeur_vide);
+        viewHolder.imageView_holder_tousproduis.setImageResource(produit.getPhoto());
     }
 
     @Override

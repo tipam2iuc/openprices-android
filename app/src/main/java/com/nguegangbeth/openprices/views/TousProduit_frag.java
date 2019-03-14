@@ -9,8 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.nguegangbeth.openprices.R;
+import com.nguegangbeth.openprices.modeles.Market;
+import com.nguegangbeth.openprices.modeles.Produits;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,6 +40,12 @@ public class TousProduit_frag extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private List<Produits> produitsList;
+    private Calendar  calendar = Calendar.getInstance();
+    private ImageView imageView;
+    //private int dateNow = (int) calendar.get(calendar.getTimeZone());
     public TousProduit_frag() {
         // Required empty public constructor
     }
@@ -78,16 +92,65 @@ public class TousProduit_frag extends Fragment {
                                 R.drawable.saucisson_ail,
                                 R.drawable.tour_canteloup,
                                 R.drawable.riz_broli_5kg,
-                                R.drawable.pate_brise
+                                R.drawable.pate_brise,
+                                R.drawable.beurre_jadida,
+                                R.drawable.jadida_table_45kg
                                 },
                          new String[]{
                                  "Pain complet",
                                  "Saucisson a l'ail",
                                  "Tour de canteloup",
                                  "Riz broli 5kg",
-                                 "Pate brise"
+                                 "Pate brise",
+                                 "Beurre Jadida 2.5kg",
+                                 "Jadida table 45kg"
                         }
                         ));
+
+
+        recyclerView = (RecyclerView)view.findViewById(R.id.recycle_view_touslesproduits);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        produitsList = new ArrayList<>();
+        for(int i = 0; i <= 10; i++){
+            Produits listItem = new Produits(
+
+                    1,"sauc2","Saucisson",1500,
+                    2.0,R.drawable.saucisson_ail, null,
+                    0,"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+            );
+
+            produitsList.add(listItem);
+        }
+
+
+        adapter = new Holder_tous_les_produitsAdapter(produitsList, getContext());
+
+        recyclerView.setAdapter(adapter);
+        imageView = (ImageView)view.findViewById(R.id.imageView_coeurvide_holderTousProduits);
+
+
+
+       /* produitsList.add(new Produits(1,"sauc2","Saucisson",1500,
+               2.0,R.drawable.saucisson_ail, null,
+               0,"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"));
+
+        produitsList.add(new Produits(2,"beure1","Beurre jadida table",2500,
+                45,R.drawable.jadida_table_45kg, null,
+                0,"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"));
+
+        produitsList.add(new Produits(3,"beure2","Beurre jadida",2500,
+                2.5,R.drawable.jadida_2_5kg, null,
+                0,"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"));
+
+        produitsList.add(new Produits(4,"beure2","Spaghetti panzani",2500,
+                1,R.drawable.panzani_1kg, null,
+                0,"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"));
+        adapter = new Holder_tous_les_produitsAdapter(produitsList,getContext());*/
+       recyclerView.setAdapter(adapter);
+
+
         return view;
     }
 

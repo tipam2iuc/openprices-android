@@ -54,21 +54,20 @@
 
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textview_promo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/layout_plusrecommend"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/head"
-                    android:fontFamily="@font/comic_sans_ms"
-                    android:text="Les plus apprecies"
-                    android:textColor="@color/violetFonce"
-                    android:textSize="15dp"
-                    android:paddingLeft="5dp"
-                    />
+            <TextView
+                android:id="@+id/textview_promo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_plusrecommend"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:background="@color/head"
+                android:fontFamily="@font/comic_sans_ms"
+                android:paddingLeft="5dp"
+                android:text="Les plus proches de chez vous"
+                android:textColor="@color/violetFonce"
+                android:textSize="15dp" />
 
                 <LinearLayout
                     android:id="@+id/layout_rech"
@@ -113,7 +112,9 @@
                     android:padding="5dp"
                     android:layout_marginBottom="2dp"
                     android:background="@color/head">
+
                     <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycle_view_touslesproduits"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">

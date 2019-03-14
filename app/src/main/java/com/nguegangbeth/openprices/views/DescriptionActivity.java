@@ -1,6 +1,7 @@
 package com.nguegangbeth.openprices.views;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +30,9 @@ public class DescriptionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("DescriptionActivity::onCreate");
         super.onCreate(savedInstanceState);
+        /*if(StartActShow()){
+            startActivity(new Intent(DescriptionActivity.this, ChoixConnexionActivity.class));
+        }*/
         setContentView(R.layout.activity_description);
         Init();
 
@@ -48,6 +52,7 @@ public class DescriptionActivity extends AppCompatActivity {
                 if((CurrentPage +1 ) == 3){
                     Intent intent = new Intent(DescriptionActivity.this, ChoixConnexionActivity.class);
                     startActivity(intent);
+                    SavePreferences();
                     finish();
                 }else{
                     viewPager_slide.setCurrentItem(CurrentPage + 1);
@@ -141,6 +146,19 @@ public class DescriptionActivity extends AppCompatActivity {
 
         }
     };
+
+    private boolean StartActShow(){
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        return sharedPreferences.getBoolean("AlreadyOpenIntro", false);
+    }
+
+    private void SavePreferences(){
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("AlreadyOpenIntro", true);
+        editor.apply();
+        editor.commit();
+    }
 
     @Override
     public void onDestroy() {

@@ -8,14 +8,14 @@ public class Produits {
     private String Id_Produit;
     private String NomProduit;
     private int Prix;
-    private Float Poids;
+    private double Poids;
     private int Photo;
     private Date dateAjout;
-    private Market Id_market;
+    private int Id_market;
     private String Description;
 
     public Produits(Integer id, String id_Produit, String nomProduit,
-                    int prix, Float poids, int photo, Date dateAjout, Market id_market, String description) {
+                    int prix, double poids, int photo, Date dateAjout, int id_market, String description) {
         Id = id;
         Id_Produit = id_Produit;
         NomProduit = nomProduit;
@@ -24,6 +24,14 @@ public class Produits {
         Photo = photo;
         this.dateAjout = dateAjout;
         Id_market = id_market;
+        Description = description;
+    }
+
+    public Produits(String nomProduit, int prix, double poids, int photo, String description) {
+        NomProduit = nomProduit;
+        Prix = prix;
+        Poids = poids;
+        Photo = photo;
         Description = description;
     }
 
@@ -59,11 +67,11 @@ public class Produits {
         Prix = prix;
     }
 
-    public Float getPoids() {
+    public double getPoids() {
         return Poids;
     }
 
-    public void setPoids(Float poids) {
+    public void setPoids(double poids) {
         Poids = poids;
     }
 
@@ -83,11 +91,11 @@ public class Produits {
         this.dateAjout = dateAjout;
     }
 
-    public Market getId_market() {
+    public int getId_market() {
         return Id_market;
     }
 
-    public void setId_market(Market id_market) {
+    public void setId_market(int id_market) {
         Id_market = id_market;
     }
 

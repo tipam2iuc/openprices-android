@@ -1,6 +1,7 @@
 package com.nguegangbeth.openprices.views;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -51,6 +52,9 @@ public class ChoixConnexionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*if(StartActShow()){
+            startActivity(new Intent(ChoixConnexionActivity.this, BottomNavigatorActivity.class));
+        }*/
         setContentView(R.layout.activity_choix_connexion);
         button_google = (Button)findViewById(R.id.button_google);
         //Init();
@@ -72,6 +76,8 @@ public class ChoixConnexionActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser() != null ){
                     startActivity(new Intent(ChoixConnexionActivity.this, BottomNavigatorActivity.class));
+                    //SavePreferences();
+                    finish();
                 }
             }
         };
@@ -119,6 +125,19 @@ public class ChoixConnexionActivity extends AppCompatActivity {
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
+    }
+
+    private boolean StartActShow(){
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        return sharedPreferences.getBoolean("AlreadyOpenIntro", false);
+    }
+
+    private void SavePreferences(){
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("AlreadyOpenIntro", true);
+        editor.apply();
+        editor.commit();
     }
 
 
