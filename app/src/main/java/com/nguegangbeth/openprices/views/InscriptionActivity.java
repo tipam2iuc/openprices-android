@@ -32,16 +32,19 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.nguegangbeth.openprices.R;
 
-public class ChoixConnexionActivity extends AppCompatActivity {
+public class InscriptionActivity extends AppCompatActivity {
 
     private Button button_facebook;
-    private Button button_google;
+    private ImageButton button_google;
     private static final int RC_SIGN_IN = 0;
     FirebaseAuth.AuthStateListener mAuthListener;
     GoogleApiClient mGoogleApiClient;
-    private CheckBox checkBox_terme;
-    private TextView textView_passer;
     FirebaseAuth mAuth;
+    private CheckBox checkBox_motPasse;
+    private EditText editText_nom;
+    private EditText editText_email;
+    private EditText editText_motpsse;
+    private EditText editText_confirmmotpasse;
 
     @Override
     protected void onStart() {
@@ -53,10 +56,29 @@ public class ChoixConnexionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         /*if(StartActShow()){
-            startActivity(new Intent(ChoixConnexionActivity.this, BottomNavigatorActivity.class));
+            startActivity(new Intent(InscriptionActivity.this, BottomNavigatorActivity.class));
         }*/
-        setContentView(R.layout.activity_choix_connexion);
-        button_google = (Button)findViewById(R.id.button_google);
+        setContentView(R.layout.activity_inscription);
+        button_google = (ImageButton)findViewById(R.id.button_google);
+        checkBox_motPasse = (CheckBox)findViewById(R.id.checkbox_affichermotdepase_inscription);
+        editText_confirmmotpasse = (EditText)findViewById(R.id.editextView_confirmmotPasse_inscription);
+        editText_email = (EditText)findViewById(R.id.editextView_email_inscription);
+        editText_motpsse = (EditText)findViewById(R.id.editextView_motPasse_inscription);
+        editText_nom = (EditText)findViewById(R.id.editextView_NomPrenom);
+        final int value = editText_confirmmotpasse.getInputType();
+
+        checkBox_motPasse.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    editText_confirmmotpasse.setInputType(8);
+                    editText_motpsse.setInputType(8);
+                }else {
+                    editText_confirmmotpasse.setInputType(value);
+                    editText_motpsse.setInputType(value);
+                }
+            }
+        });
         //Init();
         mAuth = FirebaseAuth.getInstance();
         FirebaseApp.initializeApp(this);
@@ -75,39 +97,13 @@ public class ChoixConnexionActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser() != null ){
-                    startActivity(new Intent(ChoixConnexionActivity.this, BottomNavigatorActivity.class));
+                    startActivity(new Intent(InscriptionActivity.this, BottomNavigatorActivity.class));
                     //SavePreferences();
                     finish();
                 }
             }
         };
 
-        //button_facebook.setEnabled(false);
-
-        //textView_passer.setEnabled(false);
-
-        /**
-         * Valide les boutons du formulaire que lorsaque l'utilisateur accepte les termes du contrat
-         */
-        /*
-        checkBox_terme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    textView_passer.setTextColor(getResources().getColor(R.color.violetFonce));
-                    textView_passer.setEnabled(true);
-                    button_google.setEnabled(true);
-                    button_facebook.setEnabled(true);
-                }else{
-                    textView_passer.setTextColor(getResources().getColor(R.color.darkGray));
-                    textView_passer.setEnabled(false);
-                    button_google.setEnabled(false);
-                    button_facebook.setEnabled(false);
-                }
-
-            }
-        });
-        */
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -187,7 +183,7 @@ public class ChoixConnexionActivity extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("TAG", "signInWithCredential:failure", task.getException());
-                            Toast.makeText(ChoixConnexionActivity.this, "Echec lors de l'Authentification.",
+                            Toast.makeText(InscriptionActivity.this, "Echec lors de l'Authentification.",
                                     Toast.LENGTH_SHORT).show();
                             //updateUI(null);
                         }
@@ -211,7 +207,7 @@ public class ChoixConnexionActivity extends AppCompatActivity {
     /*private void EcouteTextViewPasser(){
         textView_passer.setOnClickListener(new ImageButton.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent(ChoixConnexionActivity.this, User_no_connectActivity.class);
+                Intent intent = new Intent(InscriptionActivity.this, User_no_connectActivity.class);
                 startActivity(intent);
             }
         });

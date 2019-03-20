@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_light"
-    tools:context=".views.ChoixConnexionActivity"
+    android:background="@drawable/bg"
+    tools:context=".views.InscriptionActivity"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     >
@@ -28,15 +28,15 @@
         android:layout_height="39dp"
         android:layout_alignRight="@id/dots_layout"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="9dp"
         android:layout_marginRight="46dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/comic_sans_ms"
-        android:text="Retour"
         android:gravity="left|center_horizontal|center_vertical"
+        android:text="Retour"
+        android:textColor="@android:color/background_light"
         android:visibility="invisible"
-        android:textColor="@color/violetFonce"
-        android:layout_alignParentBottom="true"
 
         />
 
@@ -58,12 +58,12 @@
         android:layout_height="45dp"
         android:layout_alignLeft="@id/dots_layout"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="47dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/comic_sans_ms"
+        android:gravity="center_vertical|center_horizontal|right"
         android:text="Suivant"
-        android:textColor="@color/violetFonce"
-        android:layout_alignParentBottom="true"
-        android:gravity="center_vertical|center_horizontal|right"/>
+        android:textColor="@android:color/background_light" />
 
 </RelativeLayout>

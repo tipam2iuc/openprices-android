@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.DescriptionActivity"
-    android:background="@android:color/background_light">
+    >
 
 
     <ImageView
@@ -41,7 +41,8 @@
         android:layout_marginRight="16dp"
         android:fontFamily="@font/comic_sans_ms"
         android:gravity="center"
-        android:text="Text" />
+        android:text="Text"
+        android:textColor="@android:color/background_light"/>
 
 
 </RelativeLayout>

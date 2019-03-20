@@ -30,11 +30,11 @@ public class Interface_connexionActivity extends AppCompatActivity {
     }
 
     private void Init(){
-        email = (EditText)findViewById(R.id.editText_email_connect);
-        password = (EditText)findViewById(R.id.editText_motpasse_connect);
+        email = (EditText)findViewById(R.id.editextView_email_connexion);
+        password = (EditText)findViewById(R.id.editextView_motPasse_connexion);
         invalid_identifier = (TextView)findViewById(R.id.textView_invalid_identifiant);
         this.contole_user = Contole_User.getInstance(this);
-        button_connexion = (Button)findViewById(R.id.button_connexion_connect);
+        button_connexion = (Button)findViewById(R.id.button_connexion);
     }
 
     private void EcouteButtonConnexion(){

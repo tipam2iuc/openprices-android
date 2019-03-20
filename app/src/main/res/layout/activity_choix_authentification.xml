@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".views.Choix_authentificationActivity"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:padding="16dp"
+    >
+
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textview_desc_choixConnex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_logo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="80dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="desc"
+        android:textSize="20dp"
+        android:textColor="@android:color/background_light"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textview_desc_choixConnex"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="50dp"
+        android:gravity="bottom"
+        >
+
+        <Button
+            android:id="@+id/button_continue_CCA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btncontinue"
+            android:text="CONTINUE"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/button_seconnecter_CCA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_continue_CCA"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_connec"
+            android:text="SE CONNECTER"
+            android:textColor="@color/violetSombre"
+
+            />
+
+        <TextView
+            android:id="@+id/textview_s_inscrire_CCA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_seconnecter_CCA"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="S'inscrire"
+            android:textColor="@android:color/background_light" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

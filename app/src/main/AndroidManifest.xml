@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.DefautListProductActivity"></activity>
+        <activity android:name=".views.Choix_authentificationActivity"></activity>
+        <activity android:name=".views.DefautListProductActivity" />
         <activity
             android:name=".views.BottomNavigatorActivity"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".views.Interface_connexionActivity" />
         <activity android:name=".views.StartActivity">
             <intent-filter>
@@ -22,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".views.User_no_connectActivity" />
-        <activity android:name=".views.ChoixConnexionActivity" />
+        <activity android:name=".views.InscriptionActivity" />
         <activity android:name=".views.DescriptionActivity" />
     </application>
 

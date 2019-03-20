@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,7 +30,7 @@ public class DescriptionActivity extends AppCompatActivity {
         System.out.println("DescriptionActivity::onCreate");
         super.onCreate(savedInstanceState);
         /*if(StartActShow()){
-            startActivity(new Intent(DescriptionActivity.this, ChoixConnexionActivity.class));
+            startActivity(new Intent(DescriptionActivity.this, InscriptionActivity.class));
         }*/
         setContentView(R.layout.activity_description);
         Init();
@@ -50,7 +49,7 @@ public class DescriptionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if((CurrentPage +1 ) == 3){
-                    Intent intent = new Intent(DescriptionActivity.this, ChoixConnexionActivity.class);
+                    Intent intent = new Intent(DescriptionActivity.this, Choix_authentificationActivity.class);
                     startActivity(intent);
                     SavePreferences();
                     finish();

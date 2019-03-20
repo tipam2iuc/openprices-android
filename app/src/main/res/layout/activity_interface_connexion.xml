@@ -1,121 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".views.Interface_connexionActivity"
-    android:background="@color/violetFonce">
+    android:paddingTop="16dp"
+    >
+
+    <TextView
+        android:id="@+id/textview_creercompte_Incs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:gravity="center_horizontal"
+        android:text="CONNEXION"
+        android:textColor="@color/violetSombre"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="166dp"
+        android:layout_height="157dp"
+        android:layout_below="@id/textview_creercompte_Incs"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logos" />
 
 
-            <ImageView
-                android:id="@+id/imageView_project_name"
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/rel_conten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_logo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        >
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        >
+
+
+            <EditText
+                android:id="@+id/editextView_email_connexion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/logo"
-                android:background="@android:color/background_light"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"/>
+                android:layout_below="@id/editextView_NomPrenom"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="16dp"
+                android:backgroundTint="@color/violetSombre"
+                android:drawableLeft="@drawable/mail"
+                android:hint="Adresse mail"
+                android:inputType="textEmailAddress"
+                android:textSize="20sp" />
 
-
-            <android.support.v4.widget.NestedScrollView
+            <EditText
+                android:id="@+id/editextView_motPasse_connexion"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_below="@id/imageView_project_name"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                >
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editextView_email_connexion"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="16dp"
+                android:backgroundTint="@color/violetSombre"
+                android:drawableLeft="@drawable/secure"
+                android:hint="Mot de passe"
+                android:inputType="textPassword"
+                android:textSize="20sp" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/rect_user_creer_compte"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:orientation="vertical"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp">
 
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:fontFamily="@font/comic_sans_ms"
-                        android:gravity="center"
-                        android:text="Connexion"
-                        android:textColor="@color/violetFonce"
-                        android:textSize="30sp" />
+            <CheckBox
+                android:id="@+id/checkbox_affichermotdepase_inscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editextView_motPasse_connexion"
+                android:layout_alignLeft="@id/editextView_motPasse_connexion"
+                android:text="Afficher le mot de passe"
+                android:textColor="@android:color/background_light" />
 
-                    <EditText
-                        android:id="@+id/editText_email_connect"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:drawableLeft="@drawable/mail"
-                        android:ems="10"
-                        android:fontFamily="@font/comic_sans_ms"
-                        android:hint="email@gmail.com"
-                        android:inputType="textEmailAddress"
-                        android:scrollbarSize="@android:dimen/app_icon_size"
-                        android:textColor="@color/violetFonce"
-                        android:textColorHint="@color/head"
-                        android:textSize="12sp" />
+            <TextView
+                android:id="@+id/textView_invalid_identifiant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkbox_affichermotdepase_inscription"
+                android:layout_centerHorizontal="true"
+                android:text=""
+                android:textColor="@android:color/holo_red_dark"
+                android:textStyle="italic"
+                android:layout_marginTop="10dp"/>
 
-                    <EditText
-                        android:id="@+id/editText_motpasse_connect"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:drawableLeft="@drawable/secure"
-                        android:drawableRight="@drawable/hide"
-                        android:ems="10"
-                        android:fontFamily="@font/comic_sans_ms"
-                        android:hint="email"
-                        android:inputType="textPassword"
-                        android:scrollbarSize="@android:dimen/app_icon_size"
-                        android:textColor="@color/violetFonce"
-                        android:textColorHint="@color/head"
-                        android:textSize="12sp" />
 
-                    <TextView
-                        android:id="@+id/textView_invalid_identifiant"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/comic_sans_ms"
-                        android:textColor="@android:color/holo_red_dark"
-                        android:textSize="10sp" />
+            <Button
+                android:id="@+id/button_connexion"
+                android:layout_width="368dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_invalid_identifiant"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btncontinue"
+                android:text="connexion"
+                android:textColor="@android:color/background_light"
+                android:textSize="20dp" />
 
-                    <Button
-                        android:id="@+id/button_connexion_connect"
-                        android:layout_width="match_parent"
-                        android:layout_height="32dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/rect_creer_user"
-                        android:fontFamily="@font/comic_sans_ms"
-                        android:text="Connexion"
-                        android:textColor="@android:color/background_light" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/button_connexion"
+                android:layout_centerHorizontal="true"
+                android:text="Mot de passe oublie?"
+                android:textColor="@android:color/background_light"
+                android:textStyle="italic"
+                android:layout_marginTop="10dp"/>
 
-                    <TextView
-                        android:id="@+id/textView_forgot_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center"
-                        android:text="Mot de passe oublie?"
-                        android:textColor="@color/violetFonce"
-                        android:textSize="10sp"
-                        android:textStyle="italic" />
 
-                </LinearLayout>
-            </android.support.v4.widget.NestedScrollView>
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:background="@drawable/rec_ress"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        >
+
+        <TextView
+            android:id="@+id/textview_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="11dp"
+            android:layout_marginStart="10dp"
+            android:text="OU CONNECTER-VOUS VIA"
+            android:textColor="@color/violetSombre"
+            android:paddingRight="70dp"/>
+        <ImageButton
+            android:id="@+id/button_facebook_connexion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/facbook"
+            android:background="@android:color/transparent"
+            android:layout_toRightOf="@id/textview_1"
+            />
+
+        <ImageButton
+            android:id="@+id/button_google_connexion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/button_facebook_connexion"
+            android:background="@android:color/transparent"
+            android:src="@drawable/google_circle" />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
-
-
-

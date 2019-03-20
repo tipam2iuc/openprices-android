@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".views.InscriptionActivity"
+    android:paddingTop="16dp"
+    >
+
+    <TextView
+       android:id="@+id/textview_creercompte_Incs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CREER UN COMPTE"
+        android:textSize="30dp"
+        android:textColor="@color/violetSombre"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"/>
+
+
+    <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:layout_below="@id/textview_creercompte_Incs"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:paddingTop="30dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingTop="16dp"
+                    >
+
+                    <EditText
+                        android:id="@+id/editextView_NomPrenom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:backgroundTint="@color/violetSombre"
+                        android:drawableLeft="@drawable/user"
+                        android:hint="Noms et prenoms" />
+
+                    <EditText
+                        android:id="@+id/editextView_email_inscription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editextView_NomPrenom"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="16dp"
+                        android:backgroundTint="@color/violetSombre"
+                        android:drawableLeft="@drawable/mail"
+                        android:hint="Adresse mail"
+                        android:inputType="textEmailAddress" />
+
+                    <EditText
+                        android:id="@+id/editextView_motPasse_inscription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editextView_email_inscription"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="16dp"
+                        android:backgroundTint="@color/violetSombre"
+                        android:drawableLeft="@drawable/secure"
+                        android:hint="Mot de passe"
+                        android:inputType="textPassword" />
+
+                    <EditText
+                        android:id="@+id/editextView_confirmmotPasse_inscription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editextView_motPasse_inscription"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="16dp"
+                        android:backgroundTint="@color/violetSombre"
+                        android:drawableLeft="@drawable/secure"
+                        android:hint="Confirmer votre mot de passe"
+                        android:inputType="textPassword" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_affichermotdepase_inscription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editextView_confirmmotPasse_inscription"
+                        android:layout_alignLeft="@id/editextView_confirmmotPasse_inscription"
+                        android:text="Afficher le mot de passe"
+                        android:textColor="@android:color/background_light"/>
+
+
+                    <Button
+                        android:id="@+id/button_creer_inscription"
+                        android:layout_width="368dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/checkbox_affichermotdepase_inscription"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="61dp"
+                        android:background="@drawable/btncontinue"
+                        android:text="creer"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="20dp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rec_ress"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_horizontal|center_vertical">
+
+                        <TextView
+                            android:id="@+id/textview_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="11dp"
+                            android:layout_marginStart="10dp"
+                            android:text="OU INSCRIVEZ-VOUS VIA"
+                            android:textColor="@color/violetSombre"
+                            android:paddingRight="70dp"/>
+                        <ImageButton
+                            android:id="@+id/button_facebook"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/facbook"
+                            android:background="@android:color/transparent"
+                            android:layout_toRightOf="@id/textview_1"
+                            />
+
+                        <ImageButton
+                            android:id="@+id/button_google"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/button_facebook"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/google_circle" />
+
+                    </RelativeLayout>
+
+
+
+
+                </RelativeLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>
