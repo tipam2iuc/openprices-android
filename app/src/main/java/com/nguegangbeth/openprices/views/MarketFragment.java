@@ -20,7 +20,6 @@ public class MarketFragment extends Fragment implements MesProduits_frag.OnFragm
         Brouillons_frag.OnFragmentInteractionListener,Adresse_frag.OnFragmentInteractionListener, Gestionnaire_frag.OnFragmentInteractionListener{
 
 
-    private TabLayout tabLayout;
     public MarketFragment() {
         // Required empty public constructor
     }
@@ -37,28 +36,6 @@ public class MarketFragment extends Fragment implements MesProduits_frag.OnFragm
     }
 
     private void Init(View view){
-        tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutMarket);
-        final ViewPager viewPager = (ViewPager)view.findViewById(R.id.viewPagerPagerMarket);
-        final PagerAdapter adapter = new PageAdapterMarket(getFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
-        viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
 
     }
 

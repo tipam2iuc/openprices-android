@@ -5,96 +5,139 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.MarketFragment"
-    android:background="@android:color/background_light"
-    android:orientation="vertical">
+    android:background="@color/violetSombre"
+    android:orientation="vertical"
+    >
 
     <!-- TODO: Update blank fragment layout -->
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbarMarket"
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        android:paddingLeft="16dp"
-        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@color/colorAccent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="true">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp">
-            <SearchView
-                android:id="@+id/searchview_fragMarket"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toStartOf="@+id/imageButton_marketmenu"
-                android:layout_toLeftOf="@+id/imageButton_marketmenu"
-                android:background="@drawable/rect_recherch"
-                android:contentDescription="Rechercher..." />
-
-
-            <ImageButton
-                android:id="@+id/imageButton_marketmenu"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:background="@android:color/background_light">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circle_image_espacetravail"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/users"
+                android:layout_centerInParent="true"/>
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/background_light"
-                app:srcCompat="@drawable/user_icon"
-                android:layout_alignParentRight="true"
+                android:layout_below="@id/circle_image_espacetravail"
                 android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:paddingLeft="10dp"/>
-
+                android:text="Nom de l'entreprise"
+                android:textColor="@color/violetFonce"
+                android:textStyle="bold"
+                android:textSize="30dp"/>
 
         </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabLayoutMarket"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbarMarket"
-        android:background="@color/white"
-        android:minHeight="?attr/actionBarSize"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        app:tabIndicatorColor="@color/violetFonce"
-        app:tabSelectedTextColor="@color/violetFonce"
-        app:tabTextAppearance="@style/tabsize"
-        app:tabTextColor="@color/darkGray">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            >
 
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mes produis" />
+            <ImageButton
+                android:id="@+id/image_button_mesProduits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="49dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rect_bouton_market"
+                android:src="@drawable/mesproduits" />
 
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Brouillons" />
+            <TextView
+                android:id="@+id/textview_mesproduits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_button_mesProduits"
+                android:layout_alignLeft="@id/image_button_mesProduits"
+                android:layout_marginTop="-2dp"
+                android:text="Mes produits"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
 
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Adresses" />
+            <ImageButton
+                android:id="@+id/image_button_brouillons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="11dp"
+                android:layout_marginRight="65dp"
+                android:background="@drawable/rect_bouton_market"
+                android:src="@drawable/brouillons" />
 
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gestionnaires" />
+            <TextView
+                android:id="@+id/textview_brouillons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_button_brouillons"
+                android:layout_alignLeft="@id/image_button_brouillons"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="-2dp"
+                android:text="Brouillons"
+                android:textColor="@android:color/background_light"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-    </android.support.design.widget.TabLayout>
+            <ImageButton
+                android:id="@+id/image_button_adresses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview_mesproduits"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/rect_bouton_market"
+                android:src="@drawable/adress"
+                android:layout_alignLeft="@id/image_button_mesProduits"
+                />
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPagerPagerMarket"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@id/tabLayoutMarket"
-        android:layout_marginTop="5dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_button_adresses"
+                android:layout_alignLeft="@id/image_button_adresses"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="-2dp"
+                android:text="Adresses"
+                android:textColor="@android:color/background_light"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
+            <ImageButton
+                android:id="@+id/image_button_gestionnaires"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rect_bouton_market"
+                android:src="@drawable/gestionnaire"
+                android:layout_below="@id/textview_brouillons"
+                android:layout_alignLeft="@id/image_button_brouillons"
+                android:layout_marginTop="7dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_button_gestionnaires"
+                android:layout_alignLeft="@id/image_button_brouillons"
+                android:layout_marginTop="-2dp"
+                android:text="Gestionnaires"
+                android:textColor="@android:color/background_light"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

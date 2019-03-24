@@ -1,29 +1,26 @@
 package com.nguegangbeth.openprices.modeles;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Produits {
 
-    private Integer Id;
     private String Id_Produit;
     private String NomProduit;
     private int Prix;
     private double Poids;
     private int Photo;
     private Date dateAjout;
-    private int Id_market;
     private String Description;
 
-    public Produits(Integer id, String id_Produit, String nomProduit,
-                    int prix, double poids, int photo, Date dateAjout, int id_market, String description) {
-        Id = id;
+    public Produits(String id_Produit, String nomProduit,
+                    int prix, double poids, int photo, Date dateAjout, String description) {
         Id_Produit = id_Produit;
         NomProduit = nomProduit;
         Prix = prix;
         Poids = poids;
         Photo = photo;
         this.dateAjout = dateAjout;
-        Id_market = id_market;
         Description = description;
     }
 
@@ -35,13 +32,6 @@ public class Produits {
         Description = description;
     }
 
-    public Integer getId() {
-        return Id;
-    }
-
-    public void setId(Integer id) {
-        Id = id;
-    }
 
     public String getId_Produit() {
         return Id_Produit;
@@ -91,19 +81,24 @@ public class Produits {
         this.dateAjout = dateAjout;
     }
 
-    public int getId_market() {
-        return Id_market;
-    }
-
-    public void setId_market(int id_market) {
-        Id_market = id_market;
-    }
-
     public String getDescription() {
         return Description;
     }
 
     public void setDescription(String description) {
         Description = description;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Produits produits = (Produits) o;
+        return Objects.equals(Id_Produit, produits.Id_Produit);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Id_Produit);
     }
 }

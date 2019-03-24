@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/violetSombre">
+    <TextView
+        android:id="@+id/textview_nomsupermache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/background_light"
+        android:text="Nom supermarche"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/textview_prixsupermache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/background_light"
+        android:text="Prix produit"
+        android:textStyle="bold"
+        android:layout_below="@id/textview_nomsupermache"
+        android:drawableLeft="@drawable/paper_money"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/textview_clocksupermache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/background_light"
+        android:text="Heure fermeture"
+        android:textStyle="bold"
+        android:layout_below="@id/textview_prixsupermache"
+        android:drawableLeft="@drawable/clock"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/textview_localisationsupermache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/background_light"
+        android:text="Distance"
+        android:textStyle="bold"
+        android:layout_below="@id/textview_clocksupermache"
+        android:drawableLeft="@drawable/map"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="30dp"/>
+
+    <ImageButton
+        android:id="@+id/imageview_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="81dp"
+        android:layout_marginEnd="35dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/unlike" />
+
+    <TextView
+        android:id="@+id/textview_nombrelike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="10dp"
+        android:text="0K"
+        android:textSize="20dp"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

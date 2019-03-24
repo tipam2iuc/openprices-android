@@ -58,8 +58,8 @@
         android:minHeight="?attr/actionBarSize"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        app:tabIndicatorColor="@color/violetFonce"
-        app:tabSelectedTextColor="@color/violetFonce"
+        app:tabIndicatorColor="@color/violetSombre"
+        app:tabSelectedTextColor="@color/violetSombre"
         app:tabTextAppearance="@style/tabsize"
         app:tabTextColor="@color/darkGray">
 
@@ -89,7 +89,8 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="11dp"
-        android:text="Filtrer : " />
+        android:text="Filtrer : "
+        android:textColor="@color/violetSombre"/>
 
     <EditText
         android:id="@+id/editext_filtrer"
@@ -111,10 +112,11 @@
         android:layout_below="@id/tabLayoutUser"
         android:layout_alignEnd="@id/spinner_frag_user_conn"
         android:layout_alignRight="@id/spinner_frag_user_conn"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="73dp"
-        android:layout_marginRight="73dp"
-        android:text="Trier par: " />
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginRight="108dp"
+        android:text="Trier par: "
+        android:textColor="@color/violetSombre" />
     <Spinner
         android:id="@+id/spinner_frag_user_conn"
         android:layout_width="wrap_content"

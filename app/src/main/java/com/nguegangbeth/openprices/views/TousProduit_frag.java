@@ -1,6 +1,7 @@
 package com.nguegangbeth.openprices.views;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,12 +13,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.nguegangbeth.openprices.R;
-import com.nguegangbeth.openprices.modeles.Market;
 import com.nguegangbeth.openprices.modeles.Produits;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -111,14 +110,23 @@ public class TousProduit_frag extends Fragment {
         recyclerView = (RecyclerView)view.findViewById(R.id.recycle_view_touslesproduits);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ComparerProduitActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        /* marchand = new Marchand(1, "der", "entre", "155ds", "5842",
+                "11533", "info");
         produitsList = new ArrayList<>();
         for(int i = 0; i <= 10; i++){
             Produits listItem = new Produits(
 
-                    1,"sauc2","Saucisson",1500,
+                    "sauc2","Saucisson",1500,
                     2.0,R.drawable.saucisson_ail, null,
-                    0,"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+                    marchand,"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
             );
 
             produitsList.add(listItem);
@@ -128,7 +136,7 @@ public class TousProduit_frag extends Fragment {
         adapter = new Holder_tous_les_produitsAdapter(produitsList, getContext());
 
         recyclerView.setAdapter(adapter);
-        imageView = (ImageView)view.findViewById(R.id.imageView_coeurvide_holderTousProduits);
+        imageView = (ImageView)view.findViewById(R.id.imageView_coeurvide_holderTousProduits);*/
 
 
 

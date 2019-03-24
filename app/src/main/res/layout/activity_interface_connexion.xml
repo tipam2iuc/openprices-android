@@ -54,7 +54,6 @@
                 android:id="@+id/editextView_email_connexion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/editextView_NomPrenom"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginRight="16dp"

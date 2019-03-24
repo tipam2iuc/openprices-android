@@ -26,13 +26,13 @@ public class accesLocal_User {
 
     /**
      * Ajout d'un profil dans la bd
-     * @param user
+     * @param users
      */
 
-    public void Ajout(User user){
+    public void Ajout(users users){
         bd = accesBD.getWritableDatabase();
         String req = "INSERT INTO User(dateEnregistrement, poids, taille, age, fullname, status, gender) "
-                + "VALUES"+"("+"\"user.getNomPrenom()\""+","+"\"user.getEMAIL()\""+","+"\"user.getMotPasse()\""+ ","+"\"user.getDateNow()\""+
+                + "VALUES"+"("+"users"+","+"users"+","+"users"+ ","+"users"+
                 ")";
 
         bd.execSQL(req);
@@ -42,9 +42,9 @@ public class accesLocal_User {
      * Recuperation du dernier element de la bd
      * @return
      */
-    public User recupDernier(){
+    public users recupDernier(){
         bd = accesBD.getReadableDatabase();
-        User user = null;
+        users users = null;
         String req = "SELECT * FROM User";
         Cursor curseur = bd.rawQuery(req, null);
         curseur.moveToLast();
@@ -54,10 +54,10 @@ public class accesLocal_User {
             String nom_Prenom = curseur.getString(2);
             String motdepasse = curseur.getString(3);
 
-            user = new User(date, adresse_mail, nom_Prenom, motdepasse, motdepasse);
+           // users = new users(date, adresse_mail, nom_Prenom, motdepasse);
         }
         curseur.close();
-        return user;
+        return users;
     }
 
 }

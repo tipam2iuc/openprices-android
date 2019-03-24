@@ -12,7 +12,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -30,10 +29,23 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.gson.Gson;
 import com.nguegangbeth.openprices.R;
+import com.nguegangbeth.openprices.modeles.Role;
+import com.nguegangbeth.openprices.modeles.users;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import okhttp3.*;
+
 
 public class InscriptionActivity extends AppCompatActivity {
 
+    private static final String WS_URL = "http://192.168.137.1/openprice/userINSERT";
+    public static final MediaType MEDIA_TYPE = MediaType.parse("application/json");
     private Button button_facebook;
     private ImageButton button_google;
     private static final int RC_SIGN_IN = 0;
@@ -45,6 +57,9 @@ public class InscriptionActivity extends AppCompatActivity {
     private EditText editText_email;
     private EditText editText_motpsse;
     private EditText editText_confirmmotpasse;
+    private Button button_creer_inscription;
+
+    private Button listuser;
 
     @Override
     protected void onStart() {
@@ -64,7 +79,38 @@ public class InscriptionActivity extends AppCompatActivity {
         editText_confirmmotpasse = (EditText)findViewById(R.id.editextView_confirmmotPasse_inscription);
         editText_email = (EditText)findViewById(R.id.editextView_email_inscription);
         editText_motpsse = (EditText)findViewById(R.id.editextView_motPasse_inscription);
-        editText_nom = (EditText)findViewById(R.id.editextView_NomPrenom);
+        editText_nom = (EditText)findViewById(R.id.editextView_nomutilisateur_inscription);
+        button_creer_inscription = (Button)findViewById(R.id.button_creer_inscription);
+
+
+        listuser = (Button)findViewById(R.id.button_listUser);
+        listuser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InscriptionActivity.this, UserListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        button_creer_inscription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Date date= Calendar.getInstance().getTime();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+                users users = new users(editText_nom.getText().toString(), editText_email.getText().toString(), editText_motpsse.getText().toString(),
+                        null,sdf.format(date),2);
+
+                try {
+                    AddUser(users);
+                    Log.i("save","Save done");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Log.i("error","exception");
+                }
+            }
+        });
+
         final int value = editText_confirmmotpasse.getInputType();
 
         checkBox_motPasse.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -192,6 +238,60 @@ public class InscriptionActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
+    public void AddUser(users m) throws IOException {
+
+        final OkHttpClient client = new OkHttpClient();
+        Gson gson = new Gson();
+        String jsonInString = gson.toJson(m);
+
+        RequestBody body = RequestBody.create(MEDIA_TYPE,
+                jsonInString);
+
+        final Request request = new Request.Builder()
+                .url(WS_URL)
+                .post(body)
+                .build();
+
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.i("notsave",e.getMessage());
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+                //le retour est effectué dans un thread différent
+                final String text = response.body().string();
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(InscriptionActivity.this, text, Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+            }
+
+
+            public void onFailure(Request request, IOException e) {
+                String mMessage = e.getMessage().toString();
+
+                Toast.makeText(InscriptionActivity.this, mMessage, Toast.LENGTH_SHORT).show();
+
+
+            }
+
+
+        });
+
+
+    }
+
+
 
     /*private void Init(){
         button_facebook = (Button)findViewById(R.id.button_facebook);

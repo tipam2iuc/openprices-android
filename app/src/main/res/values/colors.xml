@@ -9,10 +9,11 @@
     <color name="white">#FFFFFF</color>
     <color name="darkGray">#AAAAAA</color>
     <color name="tabColor">#D7D4D8</color>
-    <color name="bottomInactve">#FFAA8EB2</color>
+    <color name="bottomInactve">#AA8EB2</color>
     <color name="tranparentwhite">#B8FFFFFF</color>
     <color name="violetClair">#413946</color>
     <color name="violetNoir">#2D0439</color>
     <color name="violetSombre">#4A2B51</color>
+    <color name="apptheme">#D7D1D9</color>
 
 </resources>

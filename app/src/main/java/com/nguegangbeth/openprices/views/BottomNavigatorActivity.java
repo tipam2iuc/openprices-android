@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -13,9 +14,12 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.nguegangbeth.openprices.R;
+
+import static android.view.View.INVISIBLE;
 
 public class BottomNavigatorActivity extends AppCompatActivity implements MesProduits_frag.OnFragmentInteractionListener,
         Brouillons_frag.OnFragmentInteractionListener,Adresse_frag.OnFragmentInteractionListener, Gestionnaire_frag.OnFragmentInteractionListener
@@ -23,6 +27,7 @@ public class BottomNavigatorActivity extends AppCompatActivity implements MesPro
 
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
+    private FloatingActionButton floatingActionButton;
 
     private  MarketFragment marketFragment;
     private UserConnectFragment userConnectFragment;
@@ -34,6 +39,7 @@ public class BottomNavigatorActivity extends AppCompatActivity implements MesPro
         Init();
 
         setFragment(userConnectFragment);
+        floatingActionButton.setVisibility(INVISIBLE);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -42,9 +48,11 @@ public class BottomNavigatorActivity extends AppCompatActivity implements MesPro
                 switch (menuItem.getItemId()) {
                     case R.id.nav_accueil:
                         setFragment(userConnectFragment);
+                        floatingActionButton.setVisibility(INVISIBLE);
                         return true;
                     case R.id.nav_espacetravail:
                         setFragment(marketFragment);
+                        floatingActionButton.setVisibility(View.VISIBLE);
                         return true;
                     default:
                         return false;
@@ -58,6 +66,7 @@ public class BottomNavigatorActivity extends AppCompatActivity implements MesPro
 
         frameLayout = (FrameLayout)findViewById(R.id.framelayout_market);
         bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_nav_market);
+        floatingActionButton = (FloatingActionButton)findViewById(R.id.flotting_button_botnav);
         marketFragment = new MarketFragment();
         userConnectFragment = new UserConnectFragment();
     }
